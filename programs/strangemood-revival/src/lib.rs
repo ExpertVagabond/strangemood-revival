@@ -680,8 +680,10 @@ pub struct Purchase<'info> {
     /// CHECK: cashier is stored in receipt, validated during cash instruction
     pub cashier: AccountInfo<'info>,
 
+    #[account(mut)]
     pub listing_token_account: Account<'info, TokenAccount>,
 
+    #[account(mut)]
     pub listing_mint: Box<Account<'info, Mint>>,
 
     /// CHECK: PDA seed validation via seeds constraint
